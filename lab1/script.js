@@ -1,6 +1,8 @@
 ﻿const themeToggle = document.querySelector('#theme-toggle');
 const ideaButton = document.querySelector('#idea-button');
 const ideaBox = document.querySelector('#idea-box');
+const copyButton = document.querySelector('#copy-button');
+const copyStatus = document.querySelector('#copy-status');
 const savedTheme = localStorage.getItem('theme');
 const ideas = [
   'Спробуй сьогодні подивитися на звичну річ по-новому.',
@@ -35,4 +37,12 @@ themeToggle.addEventListener('click', () => {
 ideaButton.addEventListener('click', () => {
   ideaIndex = (ideaIndex + 1) % ideas.length;
   ideaBox.textContent = ideas[ideaIndex];
+  copyStatus.textContent = '';
+  copyButton.textContent = 'Скопіювати ідею';
+});
+
+copyButton.addEventListener('click', async () => {
+  await navigator.clipboard.writeText(ideaBox.textContent);
+  copyButton.textContent = 'Скопійовано';
+  copyStatus.textContent = 'Ідею скопійовано в буфер обміну.';
 });
