@@ -1,0 +1,20 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0f172a;
+  --border-color: #e2e8f0;
+}
+
+.card {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.dark-card {
+  --bg-color: #0f172a;
+  --text-color: #ffffff;
+  --border-color: #334155;
+}
