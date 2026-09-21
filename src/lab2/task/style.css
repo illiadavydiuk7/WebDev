@@ -120,10 +120,14 @@ h1 {
 
 .button {
 	display: block;
+	width: 100%;
 	margin-top: auto;
 	padding: var(--space-small);
 	border: 1px solid var(--primary);
 	border-radius: var(--radius-small);
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
