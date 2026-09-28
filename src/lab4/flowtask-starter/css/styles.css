@@ -10,8 +10,8 @@
 
 :root {
   --ink: #111827;
-  --ink-muted: #939ba7;
-  --ink-soft: #717985;
+  --ink-muted: #5b6472;
+  --ink-soft: #4b5563;
   --brand: #4f46e5;
   --brand-dark: #4338ca;
   --brand-tint: #eef2ff;
@@ -445,7 +445,7 @@ a {
 }
 
 .trial__lead {
-  color: #dcd9fb;
+  color: #e0e7ff;
   max-width: 46ch;
   margin: 0 auto 28px;
 }
