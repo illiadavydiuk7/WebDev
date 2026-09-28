@@ -5,6 +5,7 @@
   src: url("../fonts/inter-latin.woff2") format("woff2");
   font-weight: 400 700;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -251,6 +252,8 @@ a {
 
 .hero__image {
   width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
   border-radius: var(--radius);
   box-shadow: 0 24px 60px rgba(17, 24, 39, 0.16);
 }

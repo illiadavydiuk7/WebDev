@@ -66,15 +66,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* Seasonal promo bar */
-
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      var promo = document.createElement('div');
-      promo.className = 'promo';
-      promo.innerHTML = '<strong>Autumn offer</strong> 3 months of Pro for the price of one. <a href="#pricing">See plans</a>';
-      document.body.insertBefore(promo, document.body.firstChild);
-    }, 800);
-  });
-
 });
