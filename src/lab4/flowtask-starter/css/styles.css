@@ -39,7 +39,14 @@ body {
 }
 
 :focus {
-  outline: none;
+  outline: 3px solid transparent;
+  outline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px #111827;
 }
 
 img {
@@ -142,6 +149,7 @@ a {
   font-weight: 500;
   color: #374151;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .nav-item:hover {
@@ -404,6 +412,22 @@ a {
 
 .faq__item.is-open .faq__a {
   display: block;
+}
+
+.faq__a[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Trial form */

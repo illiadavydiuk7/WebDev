@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: /admin/
-Sitemap: https://web-dev-7w85.vercel.app/sitemap.xml
+Sitemap: https://web-dev-78w5.vercel.app/sitemap.xml

@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Header navigation */
 
   document.querySelectorAll('.nav-item').forEach(function (item) {
-    item.addEventListener('click', function () {
+    item.addEventListener('click', function (event) {
       var section = document.getElementById(item.getAttribute('data-target'));
       if (section) {
+        event.preventDefault();
         section.scrollIntoView({ behavior: 'smooth' });
       }
     });
@@ -43,18 +44,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Trial form */
 
-  var trialSubmit = document.getElementById('trial-submit');
-  if (trialSubmit) {
-    trialSubmit.addEventListener('click', function () {
-      var form = document.getElementById('trial-form');
-      var email = form.querySelector('input[name="email"]');
+  var trialForm = document.getElementById('trial-form');
+  if (trialForm) {
+    trialForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      var email = trialForm.querySelector('input[name="email"]');
 
       if (!email.value) {
         email.style.boxShadow = '0 0 0 2px #fca5a5';
         return;
       }
 
-      form.innerHTML = '<p>Thanks — check your inbox, the workspace is being created.</p>';
+      trialForm.innerHTML = '<p role="status">Thanks — check your inbox, the workspace is being created.</p>';
     });
   }
 
@@ -62,7 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.faq__q').forEach(function (question) {
     question.addEventListener('click', function () {
-      question.parentElement.classList.toggle('is-open');
+      var answer = document.getElementById(question.getAttribute('aria-controls'));
+      var isOpen = question.getAttribute('aria-expanded') === 'true';
+      question.setAttribute('aria-expanded', String(!isOpen));
+      question.parentElement.classList.toggle('is-open', !isOpen);
+      answer.hidden = isOpen;
     });
   });
 
