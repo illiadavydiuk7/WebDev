@@ -21,7 +21,7 @@
 - Copied the token declarations from `courtly-assets/tokens.css` without changing their names or values. No additional CSS custom properties were introduced.
 - Montserrat is loaded with the Latin and Cyrillic subsets through Google Fonts. The existing token family provides system fallbacks if the network font is unavailable.
 - The hero uses the provided responsive `srcset`, intrinsic dimensions, and high fetch priority. Other page photos use intrinsic dimensions and lazy loading; descriptive alternatives are included. The featured venue uses the supplied portrait image and crops to 4:3 below desktop.
-- The favicon and logo use their supplied SVG assets. Canonical, Open Graph, `robots.txt`, and `sitemap.xml` currently target the GitHub Pages root inferred from the repository remote: `https://illiadavydiuk7.github.io/WebDev/`. Confirm or update these URLs if the deployed address differs.
+- The favicon and logo use their supplied SVG assets. Canonical, Open Graph, `robots.txt`, and `sitemap.xml` target the confirmed deployment at `https://webdev-lab7.vercel.app/`.
 
 ## Scope
 
@@ -30,5 +30,6 @@ Search controls and venue links are front-end presentation only. The form submit
 ## Audit and submission status
 
 - The PDF audit found and corrected mismatched anchors/IDs, incomplete form options and validation, non-button venue actions, missing unique action names, grid-based search layout, incorrect dark-section focus overrides, missing canonical/Open Graph URL metadata, and missing sitemap/robots files.
+- Local canonical, Open Graph, `robots.txt`, and sitemap URLs now match `https://webdev-lab7.vercel.app/`. The live deployment checked on 2026-09-30 still serves the previous GitHub Pages URLs, so redeploy the current files before treating its SEO metadata as compliant.
 - AI assistance: GitHub Copilot in VS Code was used to implement and audit the page. The model identifier is not exposed in this environment, so it is not guessed. All identified code-level findings were corrected; publication-dependent checks remain open.
-- Lighthouse was not run because a deployed URL is not available from this workspace. Do not report Lighthouse scores until the page has been published and tested in an Incognito/InPrivate mobile Navigation run.
+- The deployment is available, but Lighthouse was not run because no Lighthouse runner is available in this environment. Run the required Incognito/InPrivate mobile Navigation audit before reporting scores.

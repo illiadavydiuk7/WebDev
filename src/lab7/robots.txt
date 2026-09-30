@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://illiadavydiuk7.github.io/WebDev/sitemap.xml
+Sitemap: https://webdev-lab7.vercel.app/sitemap.xml
