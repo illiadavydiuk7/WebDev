@@ -14,6 +14,7 @@
 - Added a keyboard-operable menu with `aria-expanded`, a changing accessible name, Escape-to-close behavior, and automatic closure after following a menu link.
 - Used the required section IDs (`search`, `venues`, `how`, `about`, `contacts`) and linked the header and hero calls to action to `#venues`; the final call to action links to `#search`.
 - The demo search form has the required city, sport, and date fields, associated labels and native validation; the six venue actions are buttons with distinct accessible names.
+- Benefit headings use valid `h3` markup inside block containers. Step spacing follows the spec: 8 px between number and heading, 12 px between heading and text.
 - The form uses Flexbox with wrapping; venue cards use CSS Grid at the specified 1/2/3-column breakpoints. The focus token is overridden on the dark CTA and footer containers so their focus indicators inherit the accent color.
 
 ## Design tokens and assets
@@ -32,6 +33,7 @@ Search controls and venue links are front-end presentation only. The form submit
 ## Audit and submission status
 
 - The PDF audit found and corrected mismatched anchors/IDs, incomplete form options and validation, non-button venue actions, missing unique action names, grid-based search layout, incorrect dark-section focus overrides, missing canonical/Open Graph URL metadata, and missing sitemap/robots files.
-- Canonical, Open Graph, `robots.txt`, and sitemap URLs match `https://webdev-lab7.vercel.app/`. A cache-busted live check on 2026-09-30 confirmed the deployed crawler files use this URL; the Open Graph image responds with HTTP 200.
+- Canonical, Open Graph, `robots.txt`, and sitemap URLs match `https://webdev-lab7.vercel.app/`. A cache-busted live check on 2026-09-30 confirmed the crawler files use this URL; the Open Graph image responds with HTTP 200. The live page has the responsive about-image `srcset`, but still serves the older benefit-heading wrappers and step spacing; redeploy the latest local HTML/CSS before final submission.
 - AI assistance: GitHub Copilot in VS Code was used to implement and audit the page. The model identifier is not exposed in this environment, so it is not guessed. All identified code-level findings were corrected; publication-dependent checks remain open.
-- The deployment is available, but Lighthouse was not run because no Lighthouse runner is available in this environment. Run the required Incognito/InPrivate mobile Navigation audit before reporting scores.
+- Submission links: repository `https://github.com/illiadavydiuk7/WebDev`; published page `https://webdev-lab7.vercel.app/`.
+- The Lighthouse text supplied in chat reports Accessibility, Best Practices, and SEO scores of 100 on 2026-09-30 (Moto G Power, Lighthouse 13.4.1, Chrome 154, Slow 4G). It predates the latest local changes; the supplied text does not confirm Incognito/InPrivate mode. Rerun Mobile Navigation after redeploy. The Lighthouse screenshot itself is not saved in this workspace and must be attached to the email.
