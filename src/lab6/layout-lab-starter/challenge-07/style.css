@@ -1,0 +1,19 @@
+/* Challenge 7. Fluid Typography.
+   Початковий стан — breakpoint-based typography. Замініть його на clamp(). */
+
+.hero {
+  padding: 2rem 1.5rem;
+}
+
+.hero h1 { font-size: 32px; }
+.hero-text { font-size: 16px; }
+
+@media (width >= 768px) {
+  .hero h1 { font-size: 44px; }
+  .hero-text { font-size: 18px; }
+}
+
+@media (width >= 1200px) {
+  .hero h1 { font-size: 56px; }
+  .hero-text { font-size: 20px; }
+}

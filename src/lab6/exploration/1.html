@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flexbox і Grid</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+      }
+
+      .demo {
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #888;
+      }
+
+      .item {
+        padding: 20px;
+        background: lightblue;
+        border: 1px solid steelblue;
+        text-align: center;
+      }
+
+      .grid-three {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-auto-fit {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Мініексперимент: Flexbox і Grid</h1>
+    <p>Зменшуйте ширину вікна браузера та спостерігайте за змінами.</p>
+
+    <h2>1. display: flex;</h2>
+    <div class="demo" style="display: flex">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <p>Усі елементи розташовані в одному рядку.</p>
+
+    <h2>2. display: grid;</h2>
+    <div class="demo" style="display: grid">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <p>Кожен елемент займає окремий рядок.</p>
+
+    <h2>3. repeat(3, 1fr)</h2>
+    <div class="demo grid-three">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <p>Завжди три рівні колонки.</p>
+
+    <h2>4. repeat(auto-fit, minmax(200px, 1fr))</h2>
+    <div class="demo grid-auto-fit">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <p>Колонки переносяться, якщо ширини 200px недостатньо.</p>
+  </body>
+</html>

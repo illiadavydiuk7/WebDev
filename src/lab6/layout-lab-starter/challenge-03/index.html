@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 3 — Page layout</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<details class="task" lang="uk" open>
+  <summary>Завдання · Challenge 3. Responsive page layout: Grid + Flexbox</summary>
+  <p class="task-back"><a href="../index.html">← Усі challenges</a></p>
+  <p>Побудуйте повний layout сторінки: на desktop — ліворуч, на вузькому viewport — праворуч.</p>
+  <pre>
+  +-------------------------------+      +-----------------+
+  |            Header             |      |     Header      |
+  +---------+---------------------+      +-----------------+
+  | Sidebar |        Main         |      |      Main       |
+  +---------+---------------------+      +-----------------+
+  |            Footer             |      |     Sidebar     |
+  +-------------------------------+      +-----------------+
+                                         |     Footer      |
+                                         +-----------------+
+  </pre>
+  <ul>
+    <li><strong>Grid</strong> — для загального page layout та sidebar + main.</li>
+    <li><strong>Flexbox</strong> — для header, navigation і групи кнопок <code>.actions</code>.</li>
+    <li>Breakpoint визначте самостійно або, якщо це можливо, реалізуйте зміну
+      layout без Media Query.</li>
+  </ul>
+  <p><strong>Не використовувати:</strong> <code>float</code>; таблиці для layout;
+    абсолютне позиціонування як основний layout-механізм; фіксовану ширину всієї
+    сторінки.</p>
+</details>
+
+<div class="page">
+  <header class="site-header">
+    <a class="logo" href="#">WebLab</a>
+    <nav class="navigation">
+      <a href="#">Dashboard</a>
+      <a href="#">Projects</a>
+      <a href="#">Reports</a>
+    </nav>
+    <div class="actions">
+      <button>New project</button>
+      <button>Invite</button>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <h2>Filters</h2>
+    <ul>
+      <li><a href="#">All projects</a></li>
+      <li><a href="#">Active</a></li>
+      <li><a href="#">Archived</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <h1>Projects</h1>
+    <p>Main content comes first on narrow screens: it is what the visitor came for.
+      The sidebar with filters follows it.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+      a ante venenatis dapibus posuere velit aliquet.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 WebLab</p>
+  </footer>
+</div>
+</body>
+</html>

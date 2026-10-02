@@ -1,0 +1,115 @@
+/*
+ * Спільні базові стилі для всіх challenges: шрифт, кольори, вигляд карток і
+ * кнопок. Layout тут навмисно відсутній — його ви пишете у style.css
+ * відповідного challenge. Цей файл змінювати не потрібно.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #1f2937;
+  --muted: #5b6474;
+  --line: #d9dee7;
+  --surface: #f5f7fa;
+  --accent: #2455d6;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin-block: 0 0.5em;
+  line-height: 1.2;
+}
+
+p {
+  margin-block: 0 0.75em;
+}
+
+a {
+  color: var(--accent);
+}
+
+button,
+.button {
+  font: inherit;
+  padding: 0.6em 1.1em;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card,
+.feature-card,
+.product-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+/*
+ * Блок «Завдання» вгорі кожної сторінки — умова challenge, а не частина
+ * layout, який ви будуєте. Його можна згорнути, клікнувши заголовок.
+ */
+.task {
+  margin-block-end: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  border-block-end: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 0.95rem;
+}
+
+.task summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.task > :not(summary) {
+  max-inline-size: 75ch;
+}
+
+.task pre {
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+.task blockquote {
+  margin-inline: 0;
+  padding-inline-start: 1rem;
+  border-inline-start: 3px solid var(--line);
+  font-style: italic;
+}
+
+/* На вузькому екрані таблиця прокручується у власному блоці, а не розширює
+   сторінку: у Challenge 8 інакше вона сама стала б джерелом overflow. */
+.task table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin-block-end: 0.75em;
+}
+
+.task :is(th, td) {
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--line);
+  text-align: start;
+}

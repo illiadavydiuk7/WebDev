@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 9 — AI-generated Layout Review</title>
+  <link rel="stylesheet" href="../base.css">
+</head>
+<body>
+<details class="task" lang="uk" open>
+  <summary>Завдання · Challenge 9. AI-generated Layout Review</summary>
+  <p class="task-back"><a href="../index.html">← Усі challenges</a></p>
+  <p>AI-агент тут виступає у двох ролях: спочатку <strong>генерує</strong>
+    рішення, потім <strong>перевіряє</strong> його як reviewer. Між цими етапами
+    ви перевіряєте код самостійно.</p>
+  <p><strong>Етап 1. Генерація.</strong> Отримайте від AI-агента CSS-рішення для
+    такого завдання:</p>
+  <blockquote lang="en">Create a responsive dashboard with a header, sidebar, main content
+    area and a grid of cards. It should work on desktop, tablet and mobile.</blockquote>
+  <p>Покладіть відповідь AI без змін у <code>challenge-09/original/</code>, а
+    виправлену версію — у <code>challenge-09/final/</code>, щоб наприкінці
+    порівняти початковий і фінальний CSS.</p>
+  <p><strong>Етап 2. Власна перевірка.</strong> Перевірте рішення у DevTools і
+    самостійно знайдіть щонайменше 3 потенційні проблеми або зайві рішення.
+    Зверніть увагу на надмірну кількість Media Queries, фіксовані ширини,
+    <code>min-width</code>, overflow, дублювання CSS, неправильне використання
+    Flexbox/Grid, можливість використати <code>minmax()</code>/<code>auto-fit</code>
+    та Container Query.</p>
+  <p><strong>Етап 3. AI code review.</strong></p>
+  <ol>
+    <li>Передайте згенерований код AI-агенту з prompt-ом для code review (§7
+      лабораторної).</li>
+    <li>Перевірте кожну рекомендацію AI за MDN/web.dev і порівняйте з власною
+      перевіркою: що знайшов AI, а що — ви.</li>
+    <li>Виправте обґрунтовані проблеми.</li>
+    <li>Порівняйте початковий і фінальний CSS.</li>
+  </ol>
+  <table>
+    <tr><th>AI-рекомендація</th><th>Прийнята?</th><th>Перевірка</th><th>Обґрунтування</th></tr>
+    <tr><td>…</td><td>Так/Ні</td><td>MDN/web.dev</td><td>…</td></tr>
+    <tr><td>…</td><td>Так/Ні</td><td>MDN/web.dev</td><td>…</td></tr>
+    <tr><td>…</td><td>Так/Ні</td><td>MDN/web.dev</td><td>…</td></tr>
+  </table>
+</details>
+</body>
+</html>

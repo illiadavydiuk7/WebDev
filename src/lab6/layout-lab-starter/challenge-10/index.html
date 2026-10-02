@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 10 — Responsive Feature Section</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<details class="task" lang="uk" open>
+  <summary>Завдання · Challenge 10. Final Responsive Component</summary>
+  <p class="task-back"><a href="../index.html">← Усі challenges</a></p>
+  <p>Об'єднайте отримані навички в одному компоненті — Responsive Feature Section:
+    на desktop картки стоять у ряд, на mobile — одна під одною.</p>
+  <p><strong>Обов'язково використати:</strong></p>
+  <ul>
+    <li>CSS Grid;</li>
+    <li>Flexbox щонайменше для одного внутрішнього компонента;</li>
+    <li><code>minmax()</code> або <code>auto-fit</code>;</li>
+    <li><code>clamp()</code>;</li>
+    <li>Container Query щонайменше для одного компонента;</li>
+    <li>DevTools для перевірки responsive behavior.</li>
+  </ul>
+  <p><strong>Необов'язково:</strong> subgrid; container query units; named containers.</p>
+  <p><strong>Вимоги (§6):</strong> без горизонтального overflow, без фіксованої
+    ширини основного контейнера, без зайвих breakpoint-ів, без
+    <code>overflow-x: hidden</code> для приховування проблем і без абсолютного
+    позиціонування як основного механізму layout.</p>
+</details>
+
+<section class="feature-section">
+  <h2>Everything you need to ship responsive interfaces</h2>
+  <p>Grid, Flexbox, container queries and fluid typography in one small component.</p>
+
+  <div class="features">
+    <article class="feature">
+      <h3>Fast builds</h3>
+      <p>Static output with no client-side runtime by default.</p>
+      <a href="#">Learn more</a>
+    </article>
+    <article class="feature">
+      <h3>Accessible</h3>
+      <p>Semantic markup and visible focus states out of the box.</p>
+      <a href="#">Learn more</a>
+    </article>
+    <article class="feature">
+      <h3>Responsive</h3>
+      <p>Layouts that adapt to the space they are given.</p>
+      <a href="#">Learn more</a>
+    </article>
+  </div>
+</section>
+</body>
+</html>

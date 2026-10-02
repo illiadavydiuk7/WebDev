@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 1 — Flexbox header</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<details class="task" lang="uk" open>
+  <summary>Завдання · Challenge 1. Flexbox: responsive header</summary>
+  <p class="task-back"><a href="../index.html">← Усі challenges</a></p>
+  <ol>
+    <li>Розташуйте logo, navigation та button в одному рядку.</li>
+    <li>Забезпечте вертикальне вирівнювання.</li>
+    <li>Задайте відстань між елементами через <code>gap</code>.</li>
+    <li>Дозвольте navigation переноситися на новий рядок.</li>
+    <li>Не використовуйте <code>position: absolute</code> для побудови layout.</li>
+    <li>Перевірте поведінку при вузькому viewport.</li>
+  </ol>
+  <p><strong>Додатково:</strong> при недостатній ширині navigation автоматично
+    переходить на наступний рядок — без Media Query.</p>
+  <p><strong>Очікуваний результат:</strong> header залишається працездатним при
+    різній ширині viewport.</p>
+</details>
+
+<header class="header">
+  <a class="logo" href="#">WebLab</a>
+
+  <nav class="navigation">
+    <a href="#">Home</a>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <button class="header-action">Get started</button>
+</header>
+</body>
+</html>

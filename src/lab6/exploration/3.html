@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Container Query</title>
+    <style>
+      .card-area {
+        container-type: inline-size;
+        max-width: 600px;
+        padding: 15px;
+        border: 2px solid steelblue;
+      }
+
+      .card {
+        padding: 20px;
+        background: lightblue;
+      }
+
+      @container (min-width: 400px) {
+        .card {
+          display: flex;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Container Query</h1>
+
+    <div class="card-area">
+      <div class="card">
+        <strong>Картка</strong>
+        <span>Її layout залежить від ширини контейнера.</span>
+      </div>
+    </div>
+  </body>
+</html>

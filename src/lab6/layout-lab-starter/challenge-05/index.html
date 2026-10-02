@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 5–6 — Container Query card</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<details class="task" lang="uk" open>
+  <summary>Завдання · Challenge 5–6. Container Query: reusable Card</summary>
+  <p class="task-back"><a href="../index.html">← Усі challenges</a></p>
+  <p>Та сама <code>.product-card</code> стоїть у трьох місцях: у <code>.sidebar</code>,
+    у <code>main</code> і в modal-like контейнері <code>.modal</code>.</p>
+  <p><strong>Challenge 5</strong></p>
+  <ol>
+    <li>Побудуйте layout <code>.content-layout</code> (sidebar + main) і обмежте ширину
+      <code>.modal</code>, щоб отримати три контейнери різної ширини.</li>
+    <li>У вузькому контейнері картка — вертикальна, у широкому — зображення й
+      текстовий блок в один ряд.</li>
+    <li>Не використовуйте <code>@media</code> для зміни layout картки: задайте
+      <code>container-type</code> обгортці <code>.card-wrapper</code> і використайте
+      <code>@container</code>.</li>
+    <li>Перевірте, що кожна картка адаптується незалежно від viewport: змінюйте в
+      DevTools ширину контейнера, а не вікна.</li>
+  </ol>
+  <p><strong>Додатково:</strong> реалізуйте іменований container —
+    <code>container: card / inline-size;</code>.</p>
+  <p><strong>Challenge 6</strong> — продовжуйте в цьому ж <code>style.css</code></p>
+  <ol>
+    <li>Зробіть розмір заголовка <code>.product-card__title</code> залежним від ширини
+      контейнера.</li>
+    <li>Дослідіть <code>cqw</code>, <code>cqi</code>, <code>cqmin</code>, <code>cqmax</code>
+      і порівняйте їх із <code>vw</code>.</li>
+    <li>Порівняйте ту саму картку у wide і narrow container, не змінюючи viewport.
+      Поясніть, чому <code>vw</code> і <code>cqw</code> дають різну поведінку.</li>
+  </ol>
+</details>
+
+<div class="content-layout">
+  <aside class="sidebar">
+    <div class="card-wrapper">
+      <article class="product-card">
+        <img src="../img/product.svg" alt="" width="320" height="240">
+        <div class="product-card__body">
+          <h2 class="product-card__title">Wireless headphones</h2>
+          <p>Noise cancelling, 30 hours of battery life, USB-C charging.</p>
+          <p class="product-card__price">$129</p>
+          <button>Add to cart</button>
+        </div>
+      </article>
+    </div>
+  </aside>
+
+  <main>
+    <div class="card-wrapper">
+      <article class="product-card">
+        <img src="../img/product.svg" alt="" width="320" height="240">
+        <div class="product-card__body">
+          <h2 class="product-card__title">Wireless headphones</h2>
+          <p>Noise cancelling, 30 hours of battery life, USB-C charging.</p>
+          <p class="product-card__price">$129</p>
+          <button>Add to cart</button>
+        </div>
+      </article>
+    </div>
+  </main>
+</div>
+
+<!-- Modal-like container: третє місце для тієї самої картки. -->
+<div class="modal">
+  <div class="card-wrapper">
+    <article class="product-card">
+      <img src="../img/product.svg" alt="" width="320" height="240">
+      <div class="product-card__body">
+        <h2 class="product-card__title">Wireless headphones</h2>
+        <p>Noise cancelling, 30 hours of battery life, USB-C charging.</p>
+        <p class="product-card__price">$129</p>
+        <button>Add to cart</button>
+      </div>
+    </article>
+  </div>
+</div>
+</body>
+</html>

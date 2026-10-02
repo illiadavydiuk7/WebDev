@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Media Query і Grid</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+      }
+
+      .cards {
+        display: grid;
+        gap: 10px;
+      }
+
+      .media-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .auto-cards {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        padding: 25px;
+        background: lightblue;
+        text-align: center;
+      }
+
+      @media (width < 768px) {
+        .media-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Media Query і Grid</h1>
+
+    <h2>1. Media Query</h2>
+    <div class="cards media-cards">
+      <div class="card">Картка 1</div>
+      <div class="card">Картка 2</div>
+      <div class="card">Картка 3</div>
+    </div>
+
+    <h2>2. auto-fit</h2>
+    <div class="cards auto-cards">
+      <div class="card">Картка 1</div>
+      <div class="card">Картка 2</div>
+      <div class="card">Картка 3</div>
+    </div>
+  </body>
+</html>

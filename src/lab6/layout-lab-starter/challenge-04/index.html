@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 4 — Subgrid cards</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<details class="task" lang="uk" open>
+  <summary>Завдання · Challenge 4. Subgrid: aligned cards</summary>
+  <p class="task-back"><a href="../index.html">← Усі challenges</a></p>
+  <p>Картки мають різну довжину заголовків і тексту. Вирівняйте заголовки,
+    основний текст і кнопки Read more на однакових рівнях — без фіксованих висот.</p>
+  <ol>
+    <li>Спочатку реалізуйте рішення <strong>без subgrid</strong> (кожна картка — власний
+      Grid або Flexbox) і зафіксуйте, що вирівнюється, а що ні. Збережіть цей
+      варіант, щоб порівняти його з subgrid-рішенням далі.</li>
+    <li>Замініть реалізацію на <strong>subgrid</strong> (див. експеримент у §4.5 лабораторної).</li>
+    <li>Поясніть: яку проблему вирішує subgrid, яку складніше вирішити звичайним
+      nested Grid?</li>
+  </ol>
+</details>
+
+<section class="cards">
+  <article class="card">
+    <h2>Grid</h2>
+    <p>Two-dimensional layout.</p>
+    <a class="button" href="#">Read more</a>
+  </article>
+  <article class="card">
+    <h2>Container queries and reusable components</h2>
+    <p>Components that respond to the width of their own container instead of the viewport, so the same card works in a sidebar, a main column and a modal.</p>
+    <a class="button" href="#">Read more</a>
+  </article>
+  <article class="card">
+    <h2>Fluid type</h2>
+    <p>clamp() sets a minimum, a preferred value and a maximum.</p>
+    <a class="button" href="#">Read more</a>
+  </article>
+  <article class="card">
+    <h2>Subgrid</h2>
+    <p>A nested grid that shares the tracks of its parent. Useful whenever sibling components have to line up their inner parts: titles, text and actions.</p>
+    <a class="button" href="#">Read more</a>
+  </article>
+</section>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Challenge 8 — Debug the Layout</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<details class="task" lang="uk" open>
+  <summary>Завдання · Challenge 8. Debug the Layout</summary>
+  <p class="task-back"><a href="../index.html">← Усі challenges</a></p>
+  <p><code>style.css</code> містить навмисно закладені помилки. На вузькому viewport
+    сторінка має horizontal scroll, обрізаний hero heading, картки виходять за межі
+    контейнера, sidebar займає непропорційно багато місця.</p>
+  <ol>
+    <li>Відкрийте DevTools і визначте елемент, який створює overflow.</li>
+    <li>Перевірте його Box Model, computed <code>width</code>, <code>min-width</code>,
+      <code>max-width</code> та Grid/Flexbox overlay.</li>
+    <li>Знайдіть CSS rule, яка створює проблему, і визначте першопричину.</li>
+    <li>Внесіть мінімальну зміну та повторно перевірте layout.</li>
+  </ol>
+  <p>Для кожної проблеми зафіксуйте:</p>
+  <table>
+    <tr><th>Проблема</th><th>Причина</th><th>CSS-властивість</th><th>Виправлення</th></tr>
+    <tr><td>Horizontal overflow</td><td>…</td><td>…</td><td>…</td></tr>
+    <tr><td>Heading overflow</td><td>…</td><td>…</td><td>…</td></tr>
+    <tr><td>Card overflow</td><td>…</td><td>…</td><td>…</td></tr>
+  </table>
+  <p><strong>Важливо:</strong> <code>overflow-x: hidden</code> — не виправлення.
+    Поясніть, чому виник overflow, а не приховуйте його.</p>
+</details>
+
+<div class="page">
+  <aside class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#">Overview</a></li>
+      <li><a href="#">Components</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Build interfaces that adapt to their environment.</h1>
+      <p>Responsive interfaces should adapt naturally to available space.</p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h2>Flexbox</h2>
+        <p>One-dimensional layout: a row or a column of items.</p>
+      </article>
+      <article class="card">
+        <h2>Grid</h2>
+        <p>Two-dimensional layout: rows and columns at the same time.</p>
+      </article>
+      <article class="card">
+        <h2>Container queries</h2>
+        <p>Components that respond to the width of their container.</p>
+      </article>
+    </section>
+  </main>
+</div>
+</body>
+</html>
