@@ -17,16 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Sign-up flow */
 
   function startSignup() {
-    // Pre-compute the plan comparison so the trial section renders instantly.
-    var started = Date.now();
-    var total = 0;
-    while (Date.now() - started < 300) {
-      total += Math.sqrt(total + 1);
-    }
-
     var trial = document.getElementById('trial');
     if (trial) {
-      trial.scrollIntoView({ behavior: 'smooth' });
+      trial.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
       window.location.href = 'index.html#trial';
     }
