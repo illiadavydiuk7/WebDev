@@ -805,23 +805,13 @@ h3 {
 }
 
 .copyright {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-sm);
-  padding-block: var(--space-lg);
-}
-
-.copyright::before {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100vw;
+  padding: var(--space-lg) max(var(--container-gutter), calc((100% - var(--container-max)) / 2));
   border-top: var(--border-width) solid color-mix(in srgb, var(--color-on-dark-muted) 20%, transparent);
-  content: "";
-  transform: translateX(-50%);
 }
 
 .copyright a {
