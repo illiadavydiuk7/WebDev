@@ -10,5 +10,16 @@
  * @returns {Show[]}
  */
 export function sortShows(shows, key, direction = 'asc') {
-  throw new Error('Not implemented');
+  return [...shows].sort((a, b) => {
+    if (a[key] === null) return 1;
+    if (b[key] === null) return -1;
+
+    if (key === 'name') {
+      const result = a.name.localeCompare(b.name);
+      return direction === 'desc' ? -result : result;
+    }
+
+    const result = a[key] - b[key];
+    return direction === 'desc' ? -result : result;
+  });
 }
