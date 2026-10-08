@@ -1,0 +1,13 @@
+{
+  "name": "js-basics-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ЛР-8 «Основи JavaScript»: п'ять чистих функцій обробки даних TVmaze і тести до них",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
