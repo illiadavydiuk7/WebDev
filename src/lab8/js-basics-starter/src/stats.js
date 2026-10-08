@@ -14,5 +14,37 @@
  * @returns {Record<string, GenreStats>} ключ — назва жанру
  */
 export function genreStats(shows) {
-  throw new Error('Not implemented');
+  const stats = {};
+
+  for (const show of shows) {
+    for (const genre of show.genres) {
+      if (!stats[genre]) {
+        stats[genre] = {
+          count: 0,
+          ratings: [],
+        };
+      }
+
+      stats[genre].count++;
+
+      if (show.rating != null) {
+        stats[genre].ratings.push(show.rating);
+      }
+    }
+  }
+
+  for (const genre in stats) {
+    const ratings = stats[genre].ratings;
+
+    stats[genre].averageRating =
+      ratings.length === 0
+        ? null
+        : Math.round(
+            (ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length) * 10
+          ) / 10;
+
+    delete stats[genre].ratings;
+  }
+
+  return stats;
 }
