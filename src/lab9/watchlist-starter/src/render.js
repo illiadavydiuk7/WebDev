@@ -1,5 +1,5 @@
 /** @typedef {import('./state.js').Show} Show */
-import { shows } from './state.js';
+import { shows, watchlist } from './state.js';
 
 /**
  * C1. Показує серіали в списку #results — по картці з шаблону #show-card на кожен, у тому
@@ -34,6 +34,11 @@ export function renderShows(list) {
     setField('year', show.year === null ? '—' : String(show.year));
     setField('genres', show.genres.length ? show.genres.join(', ') : '—');
     setField('rating', show.rating === null ? '—' : String(show.rating));
+    const toggleButton = card.querySelector('button[data-action="toggle"]');
+    if (!(toggleButton instanceof HTMLButtonElement)) {
+      throw new Error('У шаблоні картки немає кнопки [data-action="toggle"]');
+    }
+    toggleButton.setAttribute('aria-pressed', String(watchlist.has(show.id)));
     cards.append(card);
   }
 
