@@ -1,11 +1,7 @@
 import { getShow, notes, saveNote } from './state.js';
 
-const safeSummaryTags = new Set(['P', 'B', 'I']);
-let activeShowId = null;
-let returnFocusTarget = null;
-
 /**
- * Copies TVmaze's formatted summary while excluding attributes and unsupported elements.
+ * Copies TVmaze's summary as text, excluding markup and attributes.
  * @param {Node} source
  * @param {DocumentFragment | Element} target
  */
@@ -14,14 +10,15 @@ function copySummary(source, target) {
     if (node.nodeType === Node.TEXT_NODE) {
       target.append(document.createTextNode(node.textContent ?? ''));
     } else if (node instanceof Element) {
-      const children = safeSummaryTags.has(node.tagName)
-        ? document.createElement(node.tagName.toLowerCase())
-        : document.createDocumentFragment();
+      const children = document.createDocumentFragment();
       copySummary(node, children);
       target.append(children);
     }
   }
 }
+
+let activeShowId = null;
+let returnFocusTarget = null;
 
 /**
  * C4. Відкриває діалог #details для серіалу: назва, опис, посилання на сторінку TVmaze і форма
@@ -169,8 +166,12 @@ export function initDetails(refresh) {
     }
     if (activeShowId === null) throw new Error('Не вибрано серіал для збереження нотатки');
 
+    const show = getShow(activeShowId);
     saveNote(activeShowId, { rating: value, text: noteText.value });
     closeAndRestore(true);
+    const status = document.querySelector('#status');
+    if (!(status instanceof HTMLElement)) throw new Error('Не знайдено рядок статусу #status');
+    status.textContent = `Нотатку до ${show.name} збережено`;
   });
 
   cancel.addEventListener('click', () => {
