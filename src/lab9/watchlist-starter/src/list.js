@@ -25,6 +25,10 @@ export function initList(refresh) {
       if (!(count instanceof HTMLElement)) throw new Error('Не знайдено лічильник #watchlist-count');
       count.textContent = String(watchlist.size);
       refresh();
+      const refreshedButton = results.querySelector(
+        `li[data-id="${id}"] button[data-action="toggle"]`,
+      );
+      if (refreshedButton instanceof HTMLButtonElement) refreshedButton.focus();
     } else if (button.dataset.action === 'details') {
       openDetails(id);
     }
