@@ -1,5 +1,5 @@
 /** @typedef {import('./state.js').Show} Show */
-import { shows, watchlist } from './state.js';
+import { notes, shows, watchlist } from './state.js';
 
 /**
  * C1. Показує серіали в списку #results — по картці з шаблону #show-card на кожен, у тому
@@ -34,6 +34,18 @@ export function renderShows(list) {
     setField('year', show.year === null ? '—' : String(show.year));
     setField('genres', show.genres.length ? show.genres.join(', ') : '—');
     setField('rating', show.rating === null ? '—' : String(show.rating));
+    const savedNote = notes.get(show.id);
+    const myRating = card.querySelector('.card__mine');
+    const note = card.querySelector('.card__note');
+    if (!(myRating instanceof HTMLElement) || !(note instanceof HTMLElement)) {
+      throw new Error('У шаблоні картки немає місця для оцінки й нотатки');
+    }
+    if (savedNote) {
+      setField('my-rating', String(savedNote.rating));
+      myRating.hidden = false;
+      setField('note', savedNote.text);
+      note.hidden = savedNote.text.length === 0;
+    }
     const toggleButton = card.querySelector('button[data-action="toggle"]');
     if (!(toggleButton instanceof HTMLButtonElement)) {
       throw new Error('У шаблоні картки немає кнопки [data-action="toggle"]');
