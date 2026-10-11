@@ -20,6 +20,11 @@ export function initList(refresh) {
 
     const id = Number(card.dataset.id);
     if (button.dataset.action === 'toggle') {
+      const wasInWatchlist = watchlist.has(id);
+      const mine = document.querySelector('#filters [name="mine"]');
+      const onlyMine = mine instanceof HTMLInputElement && mine.checked;
+      const cards = [...results.querySelectorAll('li[data-id]')];
+      const cardIndex = cards.indexOf(card);
       toggle(id);
       const count = document.querySelector('#watchlist-count');
       if (!(count instanceof HTMLElement)) throw new Error('Не знайдено лічильник #watchlist-count');
@@ -28,7 +33,27 @@ export function initList(refresh) {
       const refreshedButton = results.querySelector(
         `li[data-id="${id}"] button[data-action="toggle"]`,
       );
-      if (refreshedButton instanceof HTMLButtonElement) refreshedButton.focus();
+      if (refreshedButton instanceof HTMLButtonElement) {
+        refreshedButton.focus();
+      } else if (wasInWatchlist && onlyMine) {
+        const nextId = cards[cardIndex + 1]?.dataset.id;
+        const previousId = cards[cardIndex - 1]?.dataset.id;
+        const nextButton = nextId
+          ? results.querySelector(`li[data-id="${nextId}"] button[data-action="toggle"]`)
+          : null;
+        const previousButton = previousId
+          ? results.querySelector(`li[data-id="${previousId}"] button[data-action="toggle"]`)
+          : null;
+        const neighborButton = nextButton instanceof HTMLButtonElement ? nextButton : previousButton;
+        if (neighborButton instanceof HTMLButtonElement) {
+          neighborButton.focus();
+        } else {
+          const heading = document.querySelector('#results-heading');
+          if (!(heading instanceof HTMLElement)) throw new Error('Не знайдено заголовок #results-heading');
+          heading.tabIndex = -1;
+          heading.focus();
+        }
+      }
     } else if (button.dataset.action === 'details') {
       openDetails(id);
     }
