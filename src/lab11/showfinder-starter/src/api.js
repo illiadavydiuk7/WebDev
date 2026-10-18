@@ -37,5 +37,22 @@ export async function searchShows(query, { signal } = {}) {
  * @returns {Promise<{ show: object, episodes: object[], cast: object[] }>}
  */
 export async function getShow(id, { signal } = {}) {
-  // TODO C2
+  const url = new URL(`${API}/shows/${encodeURIComponent(id)}`);
+  url.searchParams.append('embed[]', 'episodes');
+  url.searchParams.append('embed[]', 'cast');
+  const response = await fetch(url, { signal });
+  if (!response.ok) {
+    /** @type {Error & { status: number }} */
+    const error = new Error(`TVmaze show request failed with HTTP ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
+
+  const data = await response.json();
+  const { _embedded: embedded, ...show } = data;
+  if (!embedded || !Array.isArray(embedded.episodes) || !Array.isArray(embedded.cast)) {
+    throw new TypeError('TVmaze show response must include embedded episodes and cast arrays');
+  }
+
+  return { show, episodes: embedded.episodes, cast: embedded.cast };
 }

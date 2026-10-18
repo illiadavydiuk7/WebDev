@@ -11,6 +11,7 @@ export function initApp() {
   const form = document.querySelector('#search');
   const input = form?.querySelector('[name="query"]');
   const results = document.querySelector('#results');
+  const details = document.querySelector('#details');
   const status = document.querySelector('#status');
   const loadingTemplate = document.querySelector('#state-loading');
   const messageTemplate = document.querySelector('#state-message');
@@ -20,6 +21,7 @@ export function initApp() {
     !(form instanceof HTMLFormElement) ||
     !(input instanceof HTMLInputElement) ||
     !results ||
+    !details ||
     !status ||
     !(loadingTemplate instanceof HTMLTemplateElement) ||
     !(messageTemplate instanceof HTMLTemplateElement) ||
@@ -32,6 +34,10 @@ export function initApp() {
   let requestId = 0;
   let activeController;
   let activeQuery;
+  let detailsRequestId = 0;
+  let detailsController;
+  let selectedShowId;
+  const showCache = new Map();
 
   function clearBusy() {
     results.removeAttribute('aria-busy');
@@ -151,7 +157,79 @@ export function initApp() {
 
   results.addEventListener('click', (event) => {
     const target = event.target;
-    if (!(target instanceof Element) || !target.closest('[data-action="retry"]')) return;
-    searchImmediately();
+    if (!(target instanceof Element)) return;
+    if (target.closest('[data-action="retry"]')) {
+      searchImmediately();
+      return;
+    }
+
+    const openButton = target.closest('[data-action="open"]');
+    const card = openButton?.closest('li[data-id]');
+    if (card) {
+      const id = Number(card.dataset.id);
+      if (Number.isInteger(id)) {
+        void openShow(id);
+      }
+    }
+  });
+
+  async function openShow(id) {
+    selectedShowId = id;
+    detailsRequestId += 1;
+    const requestId = detailsRequestId;
+    detailsController?.abort();
+    detailsController = undefined;
+
+    if (showCache.has(id)) {
+      details.removeAttribute('aria-busy');
+      renderShow(details, showCache.get(id));
+      return;
+    }
+
+    const controller = new AbortController();
+    detailsController = controller;
+    details.setAttribute('aria-busy', 'true');
+    details.replaceChildren(loadingTemplate.content.cloneNode(true));
+
+    try {
+      const showData = await getShow(id, { signal: controller.signal });
+      if (requestId !== detailsRequestId) return;
+
+      showCache.set(id, showData);
+      details.removeAttribute('aria-busy');
+      renderShow(details, showData);
+    } catch (error) {
+      if (requestId !== detailsRequestId || error?.name === 'AbortError') return;
+
+      console.error('TVmaze show request failed:', error);
+      details.removeAttribute('aria-busy');
+      const message = error?.status === 404
+        ? 'Серіал не знайдено'
+        : 'Не вдалося отримати дані від TVmaze.';
+      const fragment = error?.status === 404
+        ? messageTemplate.content.cloneNode(true)
+        : errorTemplate.content.cloneNode(true);
+      const text = fragment.querySelector(error?.status === 404 ? '.state--message' : '.state__text');
+      if (!text) {
+        throw new Error('Show state template is missing its message element');
+      }
+      text.textContent = message;
+      details.replaceChildren(fragment);
+    } finally {
+      if (detailsController === controller) {
+        detailsController = undefined;
+      }
+    }
+  }
+
+  details.addEventListener('click', (event) => {
+    const target = event.target;
+    if (
+      target instanceof Element &&
+      target.closest('[data-action="retry"]') &&
+      selectedShowId !== undefined
+    ) {
+      void openShow(selectedShowId);
+    }
   });
 }
