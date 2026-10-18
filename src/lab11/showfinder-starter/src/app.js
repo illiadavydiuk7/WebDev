@@ -37,7 +37,45 @@ export function initApp() {
   let detailsRequestId = 0;
   let detailsController;
   let selectedShowId;
+  let failedSearchQuery;
   const showCache = new Map();
+
+  function waitForRateLimit(signal) {
+    return new Promise((resolve, reject) => {
+      if (signal.aborted) {
+        reject(new DOMException('The request was aborted', 'AbortError'));
+        return;
+      }
+
+      const timer = window.setTimeout(() => {
+        signal.removeEventListener('abort', onAbort);
+        resolve();
+      }, 3000);
+      const onAbort = () => {
+        window.clearTimeout(timer);
+        signal.removeEventListener('abort', onAbort);
+        reject(new DOMException('The request was aborted', 'AbortError'));
+      };
+      signal.addEventListener('abort', onAbort, { once: true });
+    });
+  }
+
+  async function requestWithRetry(request, signal, onRateLimit) {
+    try {
+      return await request();
+    } catch (error) {
+      if (error?.status !== 429) throw error;
+      onRateLimit();
+      await waitForRateLimit(signal);
+      return request();
+    }
+  }
+
+  function errorMessage(error) {
+    if (error?.status === 429) return 'Забагато запитів до TVmaze.';
+    if (error?.kind === 'network') return 'Немає з’єднання з TVmaze.';
+    return 'Не вдалося отримати дані від TVmaze.';
+  }
 
   function clearBusy() {
     results.removeAttribute('aria-busy');
@@ -81,10 +119,19 @@ export function initApp() {
     cancelActiveRequest();
     activeController = controller;
     activeQuery = query;
+    failedSearchQuery = undefined;
     showLoading();
 
     try {
-      const shows = await searchShows(query, { signal: controller.signal });
+      const shows = await requestWithRetry(
+        () => searchShows(query, { signal: controller.signal }),
+        controller.signal,
+        () => {
+          results.setAttribute('aria-busy', 'true');
+          results.replaceChildren(loadingTemplate.content.cloneNode(true));
+          status.textContent = 'Забагато запитів до TVmaze, повторюю…';
+        },
+      );
       if (id !== requestId) return;
 
       clearBusy();
@@ -104,9 +151,10 @@ export function initApp() {
       if (!errorText) {
         throw new Error('Search error template is missing .state__text');
       }
-      errorText.textContent = 'Не вдалося отримати дані від TVmaze.';
+      failedSearchQuery = query;
+      errorText.textContent = errorMessage(error);
       results.replaceChildren(fragment);
-      status.textContent = 'Не вдалося отримати дані від TVmaze.';
+      status.textContent = errorMessage(error);
     } finally {
       if (activeController === controller) {
         activeController = undefined;
@@ -130,6 +178,7 @@ export function initApp() {
   form.addEventListener('input', (event) => {
     if (event.target !== input) return;
 
+    failedSearchQuery = undefined;
     const query = input.value.trim();
     window.clearTimeout(debounceTimer);
     debounceTimer = undefined;
@@ -159,7 +208,13 @@ export function initApp() {
     const target = event.target;
     if (!(target instanceof Element)) return;
     if (target.closest('[data-action="retry"]')) {
-      searchImmediately();
+      if (failedSearchQuery !== undefined) {
+        window.clearTimeout(debounceTimer);
+        debounceTimer = undefined;
+        void runSearch(failedSearchQuery);
+      } else {
+        searchImmediately();
+      }
       return;
     }
 
@@ -192,7 +247,14 @@ export function initApp() {
     details.replaceChildren(loadingTemplate.content.cloneNode(true));
 
     try {
-      const showData = await getShow(id, { signal: controller.signal });
+      const showData = await requestWithRetry(
+        () => getShow(id, { signal: controller.signal }),
+        controller.signal,
+        () => {
+          details.setAttribute('aria-busy', 'true');
+          details.replaceChildren(loadingTemplate.content.cloneNode(true));
+        },
+      );
       if (requestId !== detailsRequestId) return;
 
       showCache.set(id, showData);
@@ -200,16 +262,14 @@ export function initApp() {
       renderShow(details, showData);
     } catch (error) {
       if (requestId !== detailsRequestId || error?.name === 'AbortError') return;
-
       console.error('TVmaze show request failed:', error);
       details.removeAttribute('aria-busy');
-      const message = error?.status === 404
-        ? 'Серіал не знайдено'
-        : 'Не вдалося отримати дані від TVmaze.';
-      const fragment = error?.status === 404
+      const notFound = error?.status === 404;
+      const message = notFound ? 'Серіал не знайдено' : errorMessage(error);
+      const fragment = notFound
         ? messageTemplate.content.cloneNode(true)
         : errorTemplate.content.cloneNode(true);
-      const text = fragment.querySelector(error?.status === 404 ? '.state--message' : '.state__text');
+      const text = fragment.querySelector(notFound ? '.state--message' : '.state__text');
       if (!text) {
         throw new Error('Show state template is missing its message element');
       }
