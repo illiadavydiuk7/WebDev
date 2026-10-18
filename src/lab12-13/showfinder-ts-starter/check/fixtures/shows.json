@@ -1,0 +1,69 @@
+{
+ "source": "TVmaze API, https://www.tvmaze.com/api",
+ "license": "CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/",
+ "retrieved": "2026-10-15",
+ "changes": "Responses of GET /shows/:id for the ids below. Show objects keep id, url, name, type, language, genres, status, premiered, ended, rating, image, summary; the API sends more fields.",
+ "shows": {
+  "139": {
+   "id": 139,
+   "url": "https://www.tvmaze.com/shows/139/girls",
+   "name": "Girls",
+   "type": "Scripted",
+   "language": "English",
+   "genres": [
+    "Drama",
+    "Romance"
+   ],
+   "status": "Running",
+   "premiered": "2012-04-15",
+   "ended": null,
+   "rating": {
+    "average": 6.4
+   },
+   "image": {
+    "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/31/78286.jpg",
+    "original": "https://static.tvmaze.com/uploads/images/original_untouched/31/78286.jpg"
+   },
+   "summary": "<p>This Emmy winning series is a comic look at the assorted humiliations and rare triumphs of a group of girls in their 20s.</p>"
+  },
+  "41734": {
+   "id": 41734,
+   "url": "https://www.tvmaze.com/shows/41734/girls",
+   "name": "GIRLS",
+   "type": "Scripted",
+   "language": "Mongolian",
+   "genres": [
+    "Comedy"
+   ],
+   "status": "Ended",
+   "premiered": "2018-06-15",
+   "ended": "2019-10-14",
+   "rating": {
+    "average": null
+   },
+   "image": {
+    "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/191/478539.jpg",
+    "original": "https://static.tvmaze.com/uploads/images/original_untouched/191/478539.jpg"
+   },
+   "summary": null
+  },
+  "45962": {
+   "id": 45962,
+   "url": "https://www.tvmaze.com/shows/45962/harlems-kitchen",
+   "name": "Harlem's Kitchen",
+   "type": "Scripted",
+   "language": "English",
+   "genres": [
+    "Drama"
+   ],
+   "status": "In Development",
+   "premiered": null,
+   "ended": null,
+   "rating": {
+    "average": null
+   },
+   "image": null,
+   "summary": "<p>Ellis Rice, Executive Chef and patriarch, runs a successful restaurant in Harlem with his wife and three daughters. But an unexpected death thrusts the family into turmoil and puts the restaurant's future in jeopardy as long-buried secrets are revealed.</p>"
+  }
+ }
+}

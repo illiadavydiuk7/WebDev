@@ -1,0 +1,30 @@
+{
+  // Налаштування компілятора для src/. Наданий файл: не змінюйте його
+  // (лише в експерименті Е2 лабораторної — тимчасово). Правило ТЗ T4.2 перевіряє, що його не змінено.
+  "compilerOptions": {
+    // Усі строгі перевірки: null і undefined, неявний any, unknown у catch тощо.
+    "strict": true,
+    // Поки в src/ є файли .js (до міграції в T4), tsc компілює в dist/ і їх. Типи в них він
+    // не перевіряє: перевіряє лише файли .ts.
+    "allowJs": true,
+    // Яку версію JavaScript видає компілятор і типи яких вбудованих API він знає.
+    "target": "es2023",
+    "lib": ["es2023", "dom", "dom.iterable"],
+    // ES-модулі, які розуміють і браузер, і Node.
+    "module": "nodenext",
+    // tsc читає src/ і кладе JavaScript для браузера в dist/.
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true,
+    // import './api.ts' у src/ стає import './api.js' у dist/.
+    "rewriteRelativeImportExtensions": true,
+    // Типи імпортують через import type: після компіляції від них нічого не лишається.
+    "verbatimModuleSyntax": true,
+    // Лише синтаксис, який можна просто стерти (без enum, namespace і параметрів-полів):
+    // тоді тести в Node виконують ті самі файли src/*.ts, що компілює tsc.
+    "erasableSyntaxOnly": true,
+    // Без глобальних типів з node_modules/@types.
+    "types": []
+  },
+  "include": ["src"]
+}

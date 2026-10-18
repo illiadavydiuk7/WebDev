@@ -1,0 +1,999 @@
+{
+ "source": "TVmaze API, https://www.tvmaze.com/api",
+ "license": "CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/",
+ "retrieved": "2026-10-15",
+ "changes": "Responses of GET /search/shows?q=… for the queries below. Show objects keep id, url, name, type, language, genres, status, premiered, ended, rating, image, summary; the API sends more fields.",
+ "queries": {
+  "girls": [
+   {
+    "score": 0.89328086,
+    "show": {
+     "id": 139,
+     "url": "https://www.tvmaze.com/shows/139/girls",
+     "name": "Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Romance"
+     ],
+     "status": "Running",
+     "premiered": "2012-04-15",
+     "ended": null,
+     "rating": {
+      "average": 6.4
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/31/78286.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/31/78286.jpg"
+     },
+     "summary": "<p>This Emmy winning series is a comic look at the assorted humiliations and rare triumphs of a group of girls in their 20s.</p>"
+    }
+   },
+   {
+    "score": 0.8789958,
+    "show": {
+     "id": 41734,
+     "url": "https://www.tvmaze.com/shows/41734/girls",
+     "name": "GIRLS",
+     "type": "Scripted",
+     "language": "Mongolian",
+     "genres": [
+      "Comedy"
+     ],
+     "status": "Ended",
+     "premiered": "2018-06-15",
+     "ended": "2019-10-14",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/191/478539.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/191/478539.jpg"
+     },
+     "summary": null
+    }
+   },
+   {
+    "score": 0.6858927,
+    "show": {
+     "id": 525,
+     "url": "https://www.tvmaze.com/shows/525/gilmore-girls",
+     "name": "Gilmore Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Comedy",
+      "Romance"
+     ],
+     "status": "Ended",
+     "premiered": "2000-10-05",
+     "ended": "2007-05-15",
+     "rating": {
+      "average": 8
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/4/11308.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/4/11308.jpg"
+     },
+     "summary": "<p><b>Gilmore Girls</b> is a drama centering around the relationship between a thirtysomething single mother and her teen daughter living in Stars Hollow, Connecticut.</p>"
+    }
+   },
+   {
+    "score": 0.6857984,
+    "show": {
+     "id": 33320,
+     "url": "https://www.tvmaze.com/shows/33320/derry-girls",
+     "name": "Derry Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Comedy"
+     ],
+     "status": "Ended",
+     "premiered": "2018-01-04",
+     "ended": "2022-05-18",
+     "rating": {
+      "average": 7.8
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/402/1007479.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/402/1007479.jpg"
+     },
+     "summary": "<p>16-year-old Erin Quinn lives with her uncompromising mother, her long-suffering father and the fearsome ‘Granda Joe', a man whose love for his daughters and granddaughters is surpassed only by his contempt for his son-in-law.</p><p>It's the early 90s, and Erin is used to seeing her country on the nightly news and speaking in acronyms (The IRA, The UDA, The RUC). This is a time of armed police in armoured Land Rovers and British Army check points. But it's also the time of Murder She Wrote, The Cranberries, MJ and Lisa Marie, Doc Martens, bomber jackets, The X Files, Nirvana and Wayne's World. And while The Troubles may hang over her home town, Erin has troubles of her own</p>"
+    }
+   },
+   {
+    "score": 0.68532246,
+    "show": {
+     "id": 49334,
+     "url": "https://www.tvmaze.com/shows/49334/shining-girls",
+     "name": "Shining Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Crime",
+      "Thriller",
+      "Supernatural"
+     ],
+     "status": "Ended",
+     "premiered": "2022-04-29",
+     "ended": "2022-06-03",
+     "rating": {
+      "average": 7.6
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/406/1015813.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/406/1015813.jpg"
+     },
+     "summary": "<p><b>Shining Girls</b> is a metaphysical thriller, which follows a Chicago reporter who survived a brutal assault only to find her reality shifting as she hunts down her attacker.</p>"
+    }
+   },
+   {
+    "score": 0.6850335,
+    "show": {
+     "id": 23542,
+     "url": "https://www.tvmaze.com/shows/23542/good-girls",
+     "name": "Good Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Comedy",
+      "Crime"
+     ],
+     "status": "Ended",
+     "premiered": "2018-02-26",
+     "ended": "2021-07-22",
+     "rating": {
+      "average": 7.2
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/297/744253.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/297/744253.jpg"
+     },
+     "summary": "<p><b>Good Girls</b> follows three \"good girl\" suburban wives and mothers who suddenly find themselves in desperate circumstances and decide to stop playing it safe, and risk everything to take their power back.</p>"
+    }
+   },
+   {
+    "score": 0.68241674,
+    "show": {
+     "id": 67594,
+     "url": "https://www.tvmaze.com/shows/67594/dope-girls",
+     "name": "Dope Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "History"
+     ],
+     "status": "Ended",
+     "premiered": "2025-02-22",
+     "ended": "2025-02-22",
+     "rating": {
+      "average": 5.6
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/556/1390988.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/556/1390988.jpg"
+     },
+     "summary": "<p>As WWI ends, housewife Kate Galloway sets up a nightclub in Soho to support her daughters. But Kate must contend with a dangerous gangster family and the police to survive.</p>"
+    }
+   },
+   {
+    "score": 0.68210113,
+    "show": {
+     "id": 1308,
+     "url": "https://www.tvmaze.com/shows/1308/bad-girls",
+     "name": "Bad Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Romance"
+     ],
+     "status": "Ended",
+     "premiered": "1999-06-01",
+     "ended": "2006-12-18",
+     "rating": {
+      "average": 8
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/7/18492.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/7/18492.jpg"
+     },
+     "summary": "<p>Step inside HMP Larkhall and meet the women of G-Wing, who've committed various offences that range from shoplifting to murder. <b>Bad Girls</b> shows what life is like for these women in the 'inside world' and also shows the real-life problems (and maybe behaviour!) of the officers who watch them!</p>"
+    }
+   },
+   {
+    "score": 0.6803671,
+    "show": {
+     "id": 3418,
+     "url": "https://www.tvmaze.com/shows/3418/anzac-girls",
+     "name": "ANZAC Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "War",
+      "History"
+     ],
+     "status": "Ended",
+     "premiered": "2014-08-10",
+     "ended": "2014-09-14",
+     "rating": {
+      "average": 7.4
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/17/44896.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/17/44896.jpg"
+     },
+     "summary": "<p>Honouring the Centenary of the commencement of WW1, <b>ANZAC Girls</b> is a moving new six-part series based on the unique, and rarely told true stories of Australian and New Zealand nurses serving at Gallipoli and the Western Front.</p>"
+    }
+   },
+   {
+    "score": 0.6802558,
+    "show": {
+     "id": 1073,
+     "url": "https://www.tvmaze.com/shows/1073/bomb-girls",
+     "name": "Bomb Girls",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Romance",
+      "War"
+     ],
+     "status": "Ended",
+     "premiered": "2012-01-04",
+     "ended": "2013-04-29",
+     "rating": {
+      "average": 7.7
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/7/17549.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/7/17549.jpg"
+     },
+     "summary": "<p>Set in the 1940s, <b>Bomb Girls</b> tells the remarkable stories of the women who risked their lives in a munitions factory building bombs for the Allied forces fighting on the European front. The series delves into the lives of these exceptional women – peers, friends and rivals – who find themselves thrust into new worlds and changed profoundly as they are liberated from their home and social restrictions.</p>"
+    }
+   }
+  ],
+  "law & order": [
+   {
+    "score": 1.4110123,
+    "show": {
+     "id": 562,
+     "url": "https://www.tvmaze.com/shows/562/law-order",
+     "name": "Law & Order",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Running",
+     "premiered": "1990-09-13",
+     "ended": null,
+     "rating": {
+      "average": 7.4
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/644/1611219.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/644/1611219.jpg"
+     },
+     "summary": "<p>In the criminal justice system, the people are represented by two separate, yet equally important, groups: the police, who investigate crime; and the district attorneys, who prosecute the offenders. These are their stories.</p>"
+    }
+   },
+   {
+    "score": 1.4022179,
+    "show": {
+     "id": 32837,
+     "url": "https://www.tvmaze.com/shows/32837/law-and-order",
+     "name": "Law and Order",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime"
+     ],
+     "status": "Ended",
+     "premiered": "1978-04-06",
+     "ended": "1978-04-27",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/132/330366.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/132/330366.jpg"
+     },
+     "summary": "<p><b>Law and Order</b> is a series of four films about the law: those who keep it, those who break it and those who live off it.</p>"
+    }
+   },
+   {
+    "score": 1.2415786,
+    "show": {
+     "id": 867,
+     "url": "https://www.tvmaze.com/shows/867/law-order-la",
+     "name": "Law & Order: LA",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Ended",
+     "premiered": "2010-09-29",
+     "ended": "2011-07-11",
+     "rating": {
+      "average": 7.1
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/262/657208.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/262/657208.jpg"
+     },
+     "summary": "<p>In the City of Los Angeles, the people are represented by two separate yet equally important groups: the police who investigate crime and the district attorneys who prosecute the offenders. These are their stories.</p>"
+    }
+   },
+   {
+    "score": 1.2413591,
+    "show": {
+     "id": 1262,
+     "url": "https://www.tvmaze.com/shows/1262/law-order-uk",
+     "name": "Law & Order: UK",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Ended",
+     "premiered": "2009-02-23",
+     "ended": "2014-06-11",
+     "rating": {
+      "average": 7.3
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/334/836812.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/334/836812.jpg"
+     },
+     "summary": "<p>In the criminal justice system, the people are represented by two separate, yet equally important groups: the police who investigate crime, and the Crown Prosecutors who prosecute the offenders. These are their stories.<i><br></i></p>"
+    }
+   },
+   {
+    "score": 1.13467,
+    "show": {
+     "id": 48631,
+     "url": "https://www.tvmaze.com/shows/48631/law-order-organized-crime",
+     "name": "Law & Order: Organized Crime",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime"
+     ],
+     "status": "Ended",
+     "premiered": "2021-04-01",
+     "ended": "2025-06-12",
+     "rating": {
+      "average": 7.5
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/564/1410371.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410371.jpg"
+     },
+     "summary": "<p>In the nation's largest city, the vicious and violent members of the underworld are hunted by the detectives of the Organized Crime Control Bureau. These are their stories.</p>"
+    }
+   },
+   {
+    "score": 1.134387,
+    "show": {
+     "id": 786,
+     "url": "https://www.tvmaze.com/shows/786/law-order-criminal-intent",
+     "name": "Law & Order: Criminal Intent",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Ended",
+     "premiered": "2001-09-30",
+     "ended": "2011-06-26",
+     "rating": {
+      "average": 7.6
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/19/47563.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/19/47563.jpg"
+     },
+     "summary": "<p>In New York City's war on crime, the worst criminal offenders are pursued by the detectives of the Major Case Squad. These are their stories.</p>"
+    }
+   },
+   {
+    "score": 1.1296017,
+    "show": {
+     "id": 15291,
+     "url": "https://www.tvmaze.com/shows/15291/law-order-true-crime",
+     "name": "Law & Order True Crime",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Ended",
+     "premiered": "2017-09-26",
+     "ended": "2017-11-14",
+     "rating": {
+      "average": 7
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/123/307554.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/123/307554.jpg"
+     },
+     "summary": "<p>This true-crime installment of the powerhouse \"Law &amp; Order\" franchise delivers a gripping in-depth dramatization of the notorious murder case that changed America forever. When the Menendez brothers were tried on national TV for brutally killing their parents in Beverly Hills, their story became a national obsession. The first edition of this anthology series delves into the players, the crime and the media circus, detailing the day-to-day battles of the trial and unveiling the shocking truth of what really went down when the cameras stopped rolling.</p>"
+    }
+   },
+   {
+    "score": 1.0523857,
+    "show": {
+     "id": 103,
+     "url": "https://www.tvmaze.com/shows/103/law-order-special-victims-unit",
+     "name": "Law & Order: Special Victims Unit",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Running",
+     "premiered": "1999-09-20",
+     "ended": null,
+     "rating": {
+      "average": 7.9
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/644/1611226.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/644/1611226.jpg"
+     },
+     "summary": "<p>In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.</p>"
+    }
+   },
+   {
+    "score": 1.0521059,
+    "show": {
+     "id": 69139,
+     "url": "https://www.tvmaze.com/shows/69139/law-order-toronto-criminal-intent",
+     "name": "Law & Order Toronto: Criminal Intent",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Running",
+     "premiered": "2024-02-22",
+     "ended": null,
+     "rating": {
+      "average": 7.1
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/643/1609923.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/643/1609923.jpg"
+     },
+     "summary": "<p>In Toronto's war on crime, the worst offenders are pursued by the detectives of the specialized criminal investigations unit. These are their stories.</p><p>As a psychological thriller wrapped in a criminal investigation, <b>Law &amp; Order Toronto: Criminal Intent</b><i> </i>follows an elite squad of detectives who investigate high-profile crime and corruption in metro Toronto.</p>"
+    }
+   },
+   {
+    "score": 1.0475941,
+    "show": {
+     "id": 3283,
+     "url": "https://www.tvmaze.com/shows/3283/law-order-trial-by-jury",
+     "name": "Law & Order: Trial by Jury",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama",
+      "Crime",
+      "Legal"
+     ],
+     "status": "Ended",
+     "premiered": "2005-03-03",
+     "ended": "2006-01-21",
+     "rating": {
+      "average": 6.6
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/274/685591.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/274/685591.jpg"
+     },
+     "summary": "<p>In the criminal justice system, all defendants are innocent until proven guilty, either by confession, plea bargain, or trial by jury. This is one of those trials.</p>"
+    }
+   }
+  ],
+  "kitchen": [
+   {
+    "score": 0.6861741,
+    "show": {
+     "id": 253,
+     "url": "https://www.tvmaze.com/shows/253/hells-kitchen",
+     "name": "Hell's Kitchen",
+     "type": "Reality",
+     "language": "English",
+     "genres": [
+      "Food"
+     ],
+     "status": "Running",
+     "premiered": "2005-05-30",
+     "ended": null,
+     "rating": {
+      "average": 6.8
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/641/1603532.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/641/1603532.jpg"
+     },
+     "summary": "<p>In <b>Hell's Kitchen</b>, aspiring chefs are put through an intense culinary academy to prove they possess the right combination of ingredients to win a life-changing grand prize.</p>"
+    }
+   },
+   {
+    "score": 0.68560886,
+    "show": {
+     "id": 805,
+     "url": "https://www.tvmaze.com/shows/805/kitchen-nightmares",
+     "name": "Kitchen Nightmares",
+     "type": "Reality",
+     "language": "English",
+     "genres": [
+      "Food"
+     ],
+     "status": "To Be Determined",
+     "premiered": "2007-09-19",
+     "ended": null,
+     "rating": {
+      "average": 7.3
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/631/1579104.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/631/1579104.jpg"
+     },
+     "summary": "<p>Chef Gordon Ramsay of Hell's Kitchen fame is back, and this time he's hitting the road, exposing restaurants that are barely staying afloat.</p>"
+    }
+   },
+   {
+    "score": 0.68241674,
+    "show": {
+     "id": 4181,
+     "url": "https://www.tvmaze.com/shows/4181/kitchen-confidential",
+     "name": "Kitchen Confidential",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Comedy",
+      "Food"
+     ],
+     "status": "Ended",
+     "premiered": "2005-09-19",
+     "ended": "2006-01-23",
+     "rating": {
+      "average": 8
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/20/50412.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/20/50412.jpg"
+     },
+     "summary": "<p>Celebrity chef Jack Bourdain, currently making pizzas at a chain restaurant, is offered an opportunity to become head chef of Nolita, a hip New York City restaurant. Pino, the owner of the establishment, has 300 reservations on the bookS and no food, crew or chef. He gives Jack the job and 48 hours to get it done. Jack raids other kitchens, bringing in an all-star team of chefs from his past. When a food critic Jack met during his wild days comes to Nolita, things have a horrible way of going wrong. Chaos ensues, but there is hope - the food critic gives Nolita a rave review on the \"Exile on Main Street\".</p>"
+    }
+   },
+   {
+    "score": 0.6815686,
+    "show": {
+     "id": 92340,
+     "url": "https://www.tvmaze.com/shows/92340/kitchen-undercover",
+     "name": "Kitchen Undercover",
+     "type": "Reality",
+     "language": "English",
+     "genres": [
+      "Food"
+     ],
+     "status": "Running",
+     "premiered": "2026-07-28",
+     "ended": null,
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/633/1584786.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/633/1584786.jpg"
+     },
+     "summary": "<p><b>Kitchen Undercover</b>, a high-stakes, sneak-attack restaurant rescue, led by chef Antonia Lofaso, alongside sous-chef Nestor Milian who will go full undercover, slipping into failing restaurants that are one more bad review away from total collapse. While Antonia watches the drama unfold from a secret command center— spying on every meltdown, mistake, and questionable choice—Nestor will be on the inside, embedded with the staff, stirring the pot and digging up the juicy truth. From toxic team dynamics to tragic food, nothing will stay hidden for long. When the real reasons customers aren't coming back are exposed, Antonia will storm in to shake things up, call out the chaos and whip these teams into shape. But with the clock ticking and closure looming, only time will tell if Antonia can turn these hot messes into hot spots. </p>"
+    }
+   },
+   {
+    "score": 0.6813533,
+    "show": {
+     "id": 3344,
+     "url": "https://www.tvmaze.com/shows/3344/the-kitchen",
+     "name": "The Kitchen",
+     "type": "Reality",
+     "language": "English",
+     "genres": [
+      "Food"
+     ],
+     "status": "Running",
+     "premiered": "2014-01-04",
+     "ended": null,
+     "rating": {
+      "average": 4.8
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/593/1483641.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/593/1483641.jpg"
+     },
+     "summary": "<p>Spend a fun and food-filled morning in <b>The Kitchen</b>, with hosts Sunny Anderson, Katie Lee, Jeff Mauro, Marcela Valladolid and Geoffrey Zakarian. From simple supper ideas, food trend discussions and family meal tips to trivia games and viewer questions, they'll cover all things fun in food.</p>"
+    }
+   },
+   {
+    "score": 0.67991966,
+    "show": {
+     "id": 45962,
+     "url": "https://www.tvmaze.com/shows/45962/harlems-kitchen",
+     "name": "Harlem's Kitchen",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Drama"
+     ],
+     "status": "In Development",
+     "premiered": null,
+     "ended": null,
+     "rating": {
+      "average": null
+     },
+     "image": null,
+     "summary": "<p>Ellis Rice, Executive Chef and patriarch, runs a successful restaurant in Harlem with his wife and three daughters. But an unexpected death thrusts the family into turmoil and puts the restaurant's future in jeopardy as long-buried secrets are revealed.</p>"
+    }
+   },
+   {
+    "score": 0.67637134,
+    "show": {
+     "id": 3259,
+     "url": "https://www.tvmaze.com/shows/3259/hells-kitchen",
+     "name": "Hell's Kitchen",
+     "type": "Reality",
+     "language": "Italian",
+     "genres": [
+      "Food"
+     ],
+     "status": "Ended",
+     "premiered": "2014-04-17",
+     "ended": "2018-12-25",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/17/43688.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/17/43688.jpg"
+     },
+     "summary": "<p>The Italian format reflects the U.S. version. Two teams of aspiring chefs, equally divided between men and women, challenge tests with cooking and table service at the restaurant <b>Hell's Kitchen</b>, supervised and judged by chef Carlo Cracco.</p>"
+    }
+   },
+   {
+    "score": 0.67612195,
+    "show": {
+     "id": 67102,
+     "url": "https://www.tvmaze.com/shows/67102/jinnys-kitchen",
+     "name": "Jinny's Kitchen",
+     "type": "Variety",
+     "language": "Korean",
+     "genres": [
+      "Comedy",
+      "Food"
+     ],
+     "status": "To Be Determined",
+     "premiered": "2023-02-24",
+     "ended": null,
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/525/1312981.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/525/1312981.jpg"
+     },
+     "summary": "<p>In a small beautiful town in Mexico, Bacalar, Jinny's Kitchen opens, introducing Korean street food to their passionate customers! Meet Seo Jin, the boss who is serious about the business, Yu Mi, the new executive, Seo Jun, the new head of kitchen, Woo Shik, our good old intern, and Tae Hyung, the ambitious new intern! Come and enjoy their specialties made with love.</p>"
+    }
+   },
+   {
+    "score": 0.6700275,
+    "show": {
+     "id": 15365,
+     "url": "https://www.tvmaze.com/shows/15365/kitchen-casino",
+     "name": "Kitchen Casino",
+     "type": "Game Show",
+     "language": "English",
+     "genres": [
+      "Food"
+     ],
+     "status": "Ended",
+     "premiered": "2014-04-07",
+     "ended": "2014-06-01",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/353/883755.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/353/883755.jpg"
+     },
+     "summary": "<p><b>Kitchen Casino</b> ups the ante of cooking competitions, bringing together four talented chefs in a high-stakes game of chance that is all about skill, speed and adaptability. With one eye on the ticking clock, competitors have to outcook and outsmart their competition in three casino-themed challenges — slots, poker and roulette — for a chance to win a $30,000 jackpot. Chefs at the top of their game should be able to make magic with whatever Lady Luck puts in front of them, but these competitors will have to double-down on their skills or risk being eighty-sixed. Place your bets!</p>"
+    }
+   },
+   {
+    "score": 0.6692877,
+    "show": {
+     "id": 5579,
+     "url": "https://www.tvmaze.com/shows/5579/hells-kitchen",
+     "name": "Hell's Kitchen",
+     "type": "Reality",
+     "language": "English",
+     "genres": [
+      "Food"
+     ],
+     "status": "Ended",
+     "premiered": "2004-05-23",
+     "ended": "2009-04-27",
+     "rating": {
+      "average": 7.7
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/22/56542.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/22/56542.jpg"
+     },
+     "summary": "<p><b>Hell's Kitchen</b> is a British cookery reality show airing on ITV which features prospective chefs competing with each other for a final prize. Four series have aired since 2004, three presented by Angus Deayton and the latest by Claudia Winkleman. The show has had different formats and different head chefs for each season so far, including Gordon Ramsay, Gary Rhodes, Jean-Christophe Novelli and Marco Pierre White.</p>"
+    }
+   }
+  ],
+  "pilot": [
+   {
+    "score": 0.79371727,
+    "show": {
+     "id": 51465,
+     "url": "https://www.tvmaze.com/shows/51465/pilot",
+     "name": "Pilot",
+     "type": "Scripted",
+     "language": "Korean",
+     "genres": [
+      "Drama"
+     ],
+     "status": "Ended",
+     "premiered": "1993-09-13",
+     "ended": "1993-11-02",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/279/698718.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/279/698718.jpg"
+     },
+     "summary": "<p>Min Gi, Sang Hyun and Yoon Chul are three friends who are training under the Korean Aerospace University to become pilots. Hye Ran is an interior designer who works for Airbus, and Ji Won is a flight manager at the Korean Airlines. As they go through the trials and tribulations of flight school, adult life and love life, each of them is faced with unique struggles which bind them further together and advance them further in their careers.</p>"
+    }
+   },
+   {
+    "score": 0.6747196,
+    "show": {
+     "id": 2088,
+     "url": "https://www.tvmaze.com/shows/2088/miss-pilot",
+     "name": "Miss Pilot",
+     "type": "Scripted",
+     "language": "Japanese",
+     "genres": [
+      "Drama"
+     ],
+     "status": "Ended",
+     "premiered": "2013-10-15",
+     "ended": "2013-12-24",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/11/29030.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/11/29030.jpg"
+     },
+     "summary": "<p>Tezuka Haru has been desperately hunting for a job, but nothing seems to come about. Without thinking about the consequences, she takes and barely passes the necessary exam to enter the world of aviation. From then on, she begins to walk the path towards becoming a female pilot. Of course she struggles a lot, especially since the training is more severe than she expected before taking the exam. She bonds with her fellow cadets, has to deal with some very strict teachers, and meets various people while going through the pilot training.</p>"
+    }
+   },
+   {
+    "score": 0.66231155,
+    "show": {
+     "id": 48461,
+     "url": "https://www.tvmaze.com/shows/48461/montu-pilot",
+     "name": "Montu Pilot",
+     "type": "Scripted",
+     "language": "Bengali",
+     "genres": [
+      "Drama",
+      "Crime"
+     ],
+     "status": "Running",
+     "premiered": "2019-12-13",
+     "ended": null,
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/259/649874.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/259/649874.jpg"
+     },
+     "summary": "<p>Montu a boy from Neelkuthi who always wanted to be a pilot in his childhood. His mother tried everything to take him out from Neelkuthi which is a red light area but couldn't do so and met a terrible end. For all these circumstances he became a courier of woman. But his life changed completely when he met Bhromor.</p>"
+    }
+   },
+   {
+    "score": 0.6425493,
+    "show": {
+     "id": 40767,
+     "url": "https://www.tvmaze.com/shows/40767/pilot-season",
+     "name": "Pilot Season",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [
+      "Comedy"
+     ],
+     "status": "Ended",
+     "premiered": "2004-09-06",
+     "ended": "2004-09-10",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/378/946626.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/378/946626.jpg"
+     },
+     "summary": "<p>A mockumentary sitcom roasting the television industry features a student film crew following self-absorbed Hollywood types through pilot season, the 120 days in which agents, managers and lawyers try to place actors in TV-series' pilots.</p>"
+    }
+   },
+   {
+    "score": 0.58412546,
+    "show": {
+     "id": 43909,
+     "url": "https://www.tvmaze.com/shows/43909/jungle-pilot",
+     "name": "Jungle Pilot",
+     "type": "Scripted",
+     "language": "Portuguese",
+     "genres": [],
+     "status": "Ended",
+     "premiered": "2019-09-15",
+     "ended": "2019-10-13",
+     "rating": {
+      "average": null
+     },
+     "image": null,
+     "summary": null
+    }
+   },
+   {
+    "score": 0.57783353,
+    "show": {
+     "id": 61049,
+     "url": "https://www.tvmaze.com/shows/61049/the-invisible-pilot",
+     "name": "The Invisible Pilot",
+     "type": "Documentary",
+     "language": "English",
+     "genres": [
+      "Mystery"
+     ],
+     "status": "Ended",
+     "premiered": "2022-04-04",
+     "ended": "2022-04-18",
+     "rating": {
+      "average": 6
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/485/1213306.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/485/1213306.jpg"
+     },
+     "summary": "<p><b>The Invisible Pilot</b> is a tale of a charismatic, daredevil husband and father who unexpectedly jumped off a bridge in 1977, despite a seemingly happy home life and a lucrative career as a pilot. His small-town Arkansas community searches for his body in vain while family and friends seek answers. Years later, a mysterious story emerges involving hypnosis, secret identities and a double life of dangerous missions and law-breaking. And that's just the beginning…</p>"
+    }
+   },
+   {
+    "score": 0.53031576,
+    "show": {
+     "id": 72519,
+     "url": "https://www.tvmaze.com/shows/72519/top-combat-pilot",
+     "name": "Top Combat Pilot",
+     "type": "Reality",
+     "language": "English",
+     "genres": [],
+     "status": "To Be Determined",
+     "premiered": "2023-11-06",
+     "ended": null,
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/485/1213883.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/485/1213883.jpg"
+     },
+     "summary": "<p>Dennis Quaid takes us inside the most elite aviation program in America. Known as WTI, the Marine's version of Top Gun invites the best of the best combat pilots from every squadron in the country to prove their mettle. All are out to perfect their specialty, operating an unrivaled air fleet including F-18 Hornets, Huey, and Cobra Combat helicopters. The pilots who distinguish themselves earn a coveted invitation to return as an instructor…while those who slip up might not graduate at all.</p>"
+    }
+   },
+   {
+    "score": 0.50677264,
+    "show": {
+     "id": 58236,
+     "url": "https://www.tvmaze.com/shows/58236/the-pilot-show",
+     "name": "The Pilot Show",
+     "type": "Scripted",
+     "language": "English",
+     "genres": [],
+     "status": "Ended",
+     "premiered": "2003-09-08",
+     "ended": "2003-10-13",
+     "rating": {
+      "average": null
+     },
+     "image": null,
+     "summary": null
+    }
+   },
+   {
+    "score": 0.5044359,
+    "show": {
+     "id": 35210,
+     "url": "https://www.tvmaze.com/shows/35210/hisone-to-maso-tan",
+     "name": "Hisone to Maso-tan",
+     "type": "Animation",
+     "language": "Japanese",
+     "genres": [
+      "Anime",
+      "Fantasy"
+     ],
+     "status": "Ended",
+     "premiered": "2018-04-12",
+     "ended": "2018-06-28",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/147/369855.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/147/369855.jpg"
+     },
+     "summary": "<p>Straightforward and innocent Hisone Amakasu is a rookie self-defense official. She was struggling with the fact that she sometimes hurts people unintentionally by her innocent words and decided to join in Air Self-Defence, hoping to maintain a certain distance from people. This decision led her to a fateful encounter which profoundly changes her life. It was the dragon hidden in the base and it chose Hisone as his pilot. When it soared into the sky with Hisone, her fate as a dragon pilot was decided. It is said that dragons have a key to the future of the world…</p>"
+    }
+   },
+   {
+    "score": 0.5014124,
+    "show": {
+     "id": 26889,
+     "url": "https://www.tvmaze.com/shows/26889/u-prince-series-foxy-pilot",
+     "name": "U Prince Series: Foxy Pilot",
+     "type": "Scripted",
+     "language": "Thai",
+     "genres": [
+      "Drama",
+      "Romance"
+     ],
+     "status": "Ended",
+     "premiered": "2016-11-06",
+     "ended": "2016-11-27",
+     "rating": {
+      "average": null
+     },
+     "image": {
+      "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/106/265120.jpg",
+      "original": "https://static.tvmaze.com/uploads/images/original_untouched/106/265120.jpg"
+     },
+     "summary": "<p>Hawk, a young graduate of the Faculty of Engineering, begins working as a pilot at the world's \"most boring\" airport (according to him). Although his dream has been fulfilled, he wants to become more than a pilot. He then approaches Aurora, a supposed owner of a very famous airline, but in reality is the daughter of the owner of the airport where he works.</p><p>Aurora is a young woman who conceals her true identity. She is in a relationship with Francisco but meets Hawk. Because she lied to everyone, Hawk decides to get out of Aurora's life and continue hir boring work.</p>"
+    }
+   }
+  ]
+ }
+}

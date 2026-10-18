@@ -1,0 +1,20 @@
+{
+  "name": "showfinder-ts-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ЛР-12-13 «TypeScript на практиці й AI-міграція»: застосунок ShowFinder на TVmaze API, частину якого переводять з JavaScript на TypeScript власноруч, а частину — AI-агентом; перевірки типів і тести до нього",
+  "type": "module",
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "typecheck": "tsc -p check",
+    "test": "node --test \"check/*.test.js\"",
+    "check": "node check/run.js"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
