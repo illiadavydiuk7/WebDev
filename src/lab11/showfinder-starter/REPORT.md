@@ -3,7 +3,7 @@
 ## 0. Посилання
 
 - GitHub repository: [https://github.com/illiadavydiuk7/WebDev/](https://github.com/illiadavydiuk7/WebDev)
-- GitHub Pages або Vercel: [https://<username>.github.io/<repository>/ або https://<project>.vercel.app/](https://webdev-showfinder-starter.vercel.app/)
+- Vercel: [https://webdev-showfinder-starter.vercel.app/](https://webdev-showfinder-starter.vercel.app/)
 ---
 - Конспект API: [API.md](API.md)
 - Файл правил агента: [AGENTS.md](AGENTS.md)
@@ -53,7 +53,7 @@
 
 | № | Перевірка (з ТЗ) | Результат | Знімок екрана |
 |:-:|---|---|---|
-| N1 | Запит пошуку `girls` | Запит до TVmaze повертає статус `200 OK`. Параметр `q=girls` передається в URL. У відповіді отримано масив результатів. Перевірено заголовки `cache-control` і `access-control-allow-origin`. | ![Network](screenshots/image-1.png)![Headers and status](screenshots/image.png) |
+| N1 | Запит пошуку `girls` | Запит до TVmaze повертає статус `200 OK`. Параметр `q=girls` передається в URL. У відповіді отримано масив результатів. Перевірено заголовки `cache-control` і `access-control-allow-origin`. | ![Network](screenshots/image-1.png)![Headers and status](screenshots/image-7.png) |
 | N2 | Повільна мережа — Slow 4G | Під час пошуку відображається «Завантаження…». Після введення `girls` попередній запит `gir` скасовується, а на сторінці відображаються результати для `girls`. | ![Canceled status](screenshots/image-2.png)|
 | N3 | Відсутність мережі | Під час відключення мережі запит завершується помилкою. У Console зафіксовано `ERR_INTERNET_DISCONNECTED` і помилку мережевого запиту. Перевірити, що сторінка показує «Немає з'єднання з TVmaze.», а після відновлення мережі кнопка «Спробувати ще» працює. | ![Internet error](screenshots/image-3.png) |
 | N4 | Initiator | Запит деталей серіалу ініціюється кодом застосунку. У вкладці Initiator можна побачити файл і рядок JavaScript, що спричинили запит. | ![Initiator](screenshots/image-4.png) |
