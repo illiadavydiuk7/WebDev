@@ -1,0 +1,21 @@
+# API.md — конспект TVmaze API
+
+- Документація: https://www.tvmaze.com/api
+- Базова адреса API: `https://api.tvmaze.com`
+
+API — REST API, що повертає JSON і використовує принципи HATEOAS/HAL. Endpoint-и та посилання в API-відповідях доступні через HTTPS. Пов'язані ресурси можна отримувати через `embed`: наприклад, `?embed=episodes` додає список епізодів у відповідь серіалу, а `?embed[]=episodes&embed[]=cast` — епізоди й акторів.
+
+## 1. Ендпоінти й відповіді
+
+| Питання | Що каже документація | Що показав запит (адреса) |
+|---|---|---|
+| Ендпоінт пошуку за назвою, параметри | `GET /search/shows?q=:query`; обов'язковий параметр `q` — назва, нечіткий пошук допускає невеликі помилки. Результати впорядковані за релевантністю. | `GET https://api.tvmaze.com/search/shows?q=cars` — статус `200`. |
+| Форма відповіді пошуку | Масив об'єктів `{ score, show }`; `score` — релевантність, `show` — повний об'єкт серіалу. | `https://api.tvmaze.com/search/shows?q=life` — JSON-масив із 10 елементів, перший `show.name` — `"Life"`. |
+| Ендпоінт серіалу; як отримати епізоди й акторів одним запитом | Основна інформація: `GET /shows/:id`. Списки окремо: `/shows/:id/episodes` і `/shows/:id/cast`. Параметр `embed` може вбудувати пов'язані дані; кілька значень передаються через `embed[]`. | `https://api.tvmaze.com/shows/1?embed%5B%5D=episodes&embed%5B%5D=cast` — `200`, серіал `Under the Dome`, у `_embedded` є `episodes` і `cast`. Один запит повертає все потрібне. |
+| Поля серіалу, що можуть бути `null` (з прикладом серіалу) | Дані залежать від серіалу; nullable можуть бути, зокрема, `image`, `network`, `webChannel`, `runtime`, `premiered`, `ended`, `officialSite` та інші поля. Перевіряти треба конкретні поля, якими користується UI. | `https://api.tvmaze.com/shows/1?embed%5B%5D=episodes&embed%5B%5D=cast` — у `Under the Dome` поля `webChannel` і `dvdCountry` дорівнюють `null`; вбудовані списки наявні. |
+| Що повертає пошук без результатів | Звичайний пошук повертає масив; якщо збігів немає — порожній масив, це не помилка HTTP. | `https://api.tvmaze.com/search/shows?q=xyznonexistent123` — статус `200`, тіло `[]`. |
+| Що повертає неіснуючий id | Для відсутнього серіалу endpoint основної інформації відповідає HTTP `404`. | `https://api.tvmaze.com/shows/999999999` — статус `404`, JSON `{"name":"Not Found","message":"","code":0,"status":404}`. |
+| Ліміт запитів і що робити на 429 | Документація гарантує **щонайменше 20 викликів за 10 секунд на IP**; популярні кешовані ресурси можуть мати вищу пропускну здатність. На `429` клієнту слід пригальмувати на кілька секунд і повторити, а не вважати відмову постійною. | `https://api.tvmaze.com/search/shows?q=cars` — звичайний запит повернув `200`; лімітований `429` цією перевіркою не провокувався. Документація не обіцяє `Retry-After`. |
+| Кешування: що кешує TVmaze і що — браузер | TVmaze кешує відповіді на HTTP-рівні протягом 60 хвилин; зміни можуть доходити до API із затримкою до години. Браузер може повторно використати відповідь згідно з HTTP-заголовками кешу; окремо можна керувати кешем запиту (`cache`). | `https://api.tvmaze.com/search/shows?q=girls` — відповідь мала `Cache-Control: public, max-age=3600`. У досліді HTTP-кешу (див. [REPORT.md](REPORT.md), дослід 8) повторний запит використовував кеш, а `cache: "no-store"` — ні. |
+| CORS: що обіцяє документація і що показав експеримент 12 | Документація каже, що всі API endpoints підтримують CORS і доступні вебзастосункам без JSONP чи проксі. | Із origin `https://www.tvmaze.com`, `https://api.tvmaze.com/search/shows?q=cars`: запит із `Accept: application/json` повернув `200`; із `Content-Type: application/json` браузер виконав preflight, який не пройшов, і `fetch` завершився `TypeError: Failed to fetch` (експ. 12, [REPORT.md](REPORT.md)). Це не означає, що слід вмикати `no-cors`: така відповідь непрозора й непридатна для читання. |
+| Ліцензія й атрибуція | Дані API ліцензовано за **CC BY-SA 4.0**. Потрібно вказати TVmaze як джерело та дотриматися умови ShareAlike; атрибуцію можна зробити посиланням на TVmaze, наприклад URL серіалу з відповіді. | `https://api.tvmaze.com/search/shows?q=cars` — у `show.url` є посилання на сторінку джерела; приклад: `https://www.tvmaze.com/shows/139/cars`. Умови ліцензії: https://creativecommons.org/licenses/by-sa/4.0/. |
